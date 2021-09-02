@@ -96,5 +96,13 @@ async def myhouse(ctx):
     else:
         return await ctx.reply('{} is not a member of any house'.format(ctx.author.display_name))
 
+@bot.command()
+async def loc(ctx):
+    embed=discord.Embed(title="List of commands", description="", color=discord.Color.dark_gray())
+    embed.add_field(name="$onmyhead", value="To get a house", inline=False)
+    embed.add_field(name="$myhouse", value="To display your house", inline=False)
+    embed.add_field(name="$pleasechange", value="To change your house", inline=False)
+    await ctx.send(embed=embed)
+
 
 bot.run(os.getenv('TOKEN'))

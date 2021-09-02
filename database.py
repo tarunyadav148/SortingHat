@@ -4,7 +4,6 @@ class Database():
 
     def __init__(self,):  
         self.conn = sqlite3.connect('dsc.db')
-        print("Opened database successfully")
     
     def createMemeberTable(self):
         self.conn.execute('''CREATE TABLE MEMBER
