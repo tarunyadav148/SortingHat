@@ -1,5 +1,4 @@
 import discord
-from discord import embeds
 from discord.ext import commands
 
 from hogwarts import SortingHat

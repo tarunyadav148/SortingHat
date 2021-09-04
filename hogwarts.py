@@ -25,14 +25,3 @@ class SortingHat():
             'Salazar Slytherin':'https://c0.klipartz.com/pngpicture/594/270/gratis-png-slytherin-house-accesorios-para-telefonos-moviles-hogwarts-gryffindor-lord-voldemort-slytherin.png'
             }
         return HOUSE_ICON[house]
-
-    # def getBoldHouseTitile(house):
-    #     return "**"+house+"**"
-    
-    # def getEmbed(house,title):
-    #     desc = SortingHat.getBoldHouseTitile(house)
-    #     color = SortingHat.getColor(house)
-    #     embed = discord.Embed(title=title,description=desc,color=color)
-    #     url = SortingHat.getHouseIcon(house)
-    #     embed.set_image(url=url)
-    #     return embed
