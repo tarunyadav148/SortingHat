@@ -27,11 +27,5 @@ class SortingHat():
         return HOUSE_ICON[house]
 
     def getBoldHouseTitile(house):
-        HOUSE_BOLD = {
-            'Godric Gryffindor':'**Godric Gryffindor**',
-            'Rowena Ravenclaw':'**Rowena Ravenclaw**',
-            'Helga Hufflepuff':'**Helga Hufflepuff**',
-            'Salazar Slytherin':'**Salazar Slytherin**'
-        }
-        return HOUSE_BOLD[house]
+        return "**"+house+"**"
         
