@@ -5,8 +5,8 @@ class SortingHat():
 
     def getHouse():
         HOUSE = ['Godric Gryffindor','Rowena Ravenclaw','Helga Hufflepuff','Salazar Slytherin']
-        my_house = random.choice(HOUSE)
-        return my_house
+        house = random.choice(HOUSE)
+        return house
 
     def getColor(house):
         HOUSE_COLOR = {
@@ -26,6 +26,13 @@ class SortingHat():
             }
         return HOUSE_ICON[house]
 
-    def getBoldHouseTitile(house):
-        return "**"+house+"**"
-        
+    # def getBoldHouseTitile(house):
+    #     return "**"+house+"**"
+    
+    # def getEmbed(house,title):
+    #     desc = SortingHat.getBoldHouseTitile(house)
+    #     color = SortingHat.getColor(house)
+    #     embed = discord.Embed(title=title,description=desc,color=color)
+    #     url = SortingHat.getHouseIcon(house)
+    #     embed.set_image(url=url)
+    #     return embed

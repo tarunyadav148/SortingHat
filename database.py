@@ -3,7 +3,7 @@ import sqlite3
 class Database():
 
     def __init__(self,):  
-        self.conn = sqlite3.connect('dsc.db')
+        self.conn = sqlite3.connect('data.db')
     
     def createMemeberTable(self):
         self.conn.execute('''CREATE TABLE MEMBER
@@ -31,4 +31,9 @@ class Database():
     def updateMeberHouse(self,id,house):
         self.conn.execute("UPDATE MEMBER SET HOUSE=? WHERE ID=?;",(house,id,))
         self.conn.commit()
+
+if __name__=="__main__":
+    db = Database()
+    db.createMemeberTable()
+    db.close()
 
