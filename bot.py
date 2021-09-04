@@ -18,7 +18,6 @@ async def on_ready():
 
 
 
-
 @bot.command()
 async def onmyhead(ctx):
     #check allready had house
@@ -76,7 +75,6 @@ async def pleasechange(ctx):
     embed = get_embed(house=my_house,title=title)
 
     await ctx.send(embed=embed)
-
 
 
 
