@@ -11,3 +11,6 @@ def get_embed(house,title):
 
 def get_bold(house):
     return "**"+house+"**"
+
+def make_embed(message):
+    return discord.Embed(title="",description=message)

@@ -3,7 +3,7 @@ from discord.ext import commands
 
 from hogwarts import SortingHat
 from database import Database
-from helper import get_embed
+from helper import get_embed,make_embed
 
 import os
 from dotenv import load_dotenv
@@ -32,7 +32,7 @@ async def onmyhead(ctx):
     my_house = SortingHat.getHouse()
     title="I know just what to do with you..."
 
-    await ctx.send(f"Ah! {ctx.author.display_name}")
+    await ctx.send(embed=make_embed(f"Ah! {ctx.author.display_name}"))
 
     #adding to database
     db = Database()
@@ -51,7 +51,7 @@ async def onmyhead(ctx):
 async def pleasechange(ctx):  
     db = Database()
     if(db.isMemberHadHouse(id = str(ctx.author.id)) == False):
-        await ctx.send('{} is not a member of any house'.format(ctx.author.display_name))
+        await ctx.send(embed=make_embed('{} is not a member of any house'.format(ctx.author.display_name)))
         return
 
     #getting reuired fields
@@ -64,11 +64,11 @@ async def pleasechange(ctx):
     db.updateMeberHouse(str(ctx.author.id),my_house)
     db.close()
 
-    await ctx.send("It's all here in your head.")
-    await ctx.send("And {} will help you on the way to greatness,".format(old_house))
-    await ctx.send("there's no doubt about that. No?")
-    await ctx.send(f'*If you insist {ctx.author.display_name}*')
-    await ctx.send('But where to put you?')
+    await ctx.send(embed=make_embed("It's all here in your head."))
+    await ctx.send(embed=make_embed("And {} will help you on the way to greatness,".format(old_house)))
+    await ctx.send(embed=make_embed("there's no doubt about that. No?"))
+    await ctx.send(embed=make_embed(f'*If you insist {ctx.author.display_name}*'))
+    await ctx.send(embed=make_embed('But where to put you?'))
 
     #getting an embed
     embed = get_embed(house=my_house,title=title)
